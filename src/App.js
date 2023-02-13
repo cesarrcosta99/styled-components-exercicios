@@ -1,6 +1,8 @@
 import React from "react";
-import CardVideo from "./Componentes/CardVideo";
-import "./styles.css";
+import CardVideo from "./CardVideo/CardVideo";
+/* import "./styles.css"; */
+import { GlobalStyle } from "./GlobalStyle";
+import { TelaInteira,Cabecalho,CorpoPrincipal,MenuVertical,BotaoMenuVertical,PainelVideos,Footer} from "./style";
 
 export default function App() {
   const card1 = {
@@ -11,37 +13,38 @@ export default function App() {
 
   return (
     <div>
-      <div className="tela-inteira">
-        <header>
+     {/*  <GlobalStyle/> */}
+      <TelaInteira>
+        <Cabecalho>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </Cabecalho>
 
-        <main>
-          <nav className="menu-vertical">
+        <CorpoPrincipal>
+          <MenuVertical>
             <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
+              <BotaoMenuVertical>Início</BotaoMenuVertical>
+              <BotaoMenuVertical>Em alta</BotaoMenuVertical>
+              <BotaoMenuVertical>Inscrições</BotaoMenuVertical>
               <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
+              <BotaoMenuVertical>Originais</BotaoMenuVertical>
+              <BotaoMenuVertical>Histórico</BotaoMenuVertical>
             </ul>
-          </nav>
+          </MenuVertical>
 
-          <section className="painel-de-videos">
+          <PainelVideos>
             <CardVideo
               image1={card1.imagemDoVideo}
               titulo={card1.titulo}
               textoAlternativo={card1.textoAlternativo}
             />
-          </section>
-        </main>
+          </PainelVideos>
+        </CorpoPrincipal>
 
-        <footer>
+        <Footer>
           <h4>Oi! Eu moro no footer!</h4>
-        </footer>
-      </div>
+        </Footer>
+      </TelaInteira>
     </div>
   );
 }
